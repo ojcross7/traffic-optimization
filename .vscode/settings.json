@@ -4,7 +4,10 @@
         "numpy",
         "opencv",
         "psycopg",
+        "pycache",
         "pyyaml",
-        "scikit"
+        "scikit",
+        "securepassword",
+        "venv"
     ]
 }
