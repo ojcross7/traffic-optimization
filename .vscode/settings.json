@@ -1,13 +1,31 @@
 {
+    "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+    "[python]": {
+      "editor.formatOnSave": true
+    },
     "cSpell.words": [
-        "libgl",
-        "numpy",
-        "opencv",
-        "psycopg",
-        "pycache",
-        "pyyaml",
-        "scikit",
-        "securepassword",
-        "venv"
+      "barchart",
+      "carto",
+      "dotenv",
+      "geomap",
+      "gunicorn",
+      "httpauth",
+      "joblib",
+      "jsonify",
+      "keepalive",
+      "libgomp",
+      "mapbox",
+      "nodelay",
+      "nopush",
+      "numpy",
+      "percentunit",
+      "pycache",
+      "pytest",
+      "referer",
+      "scikit",
+      "sendfile",
+      "venv"
     ]
-}
+  }

@@ -1,29 +1,21 @@
-version: '3.8'  
+services:
+  prometheus:
+    image: prom/prometheus:v2.47.2
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
 
-services:  
-  web:  
-    build: .  
-    ports:  
-      - "5000:5000"  
-    environment:  
-      - FLASK_ENV=production  
-    depends_on:  
-      - redis  
-      - postgres  
+  grafana:
+    image: grafana/grafana:10.1.5
+    volumes:
+      - ./monitoring/grafana:/var/lib/grafana
+    ports:
+      - "3000:3000"
 
-  postgres:  
-    image: postgres:13  
-    environment:  
-      POSTGRES_USER: admin  
-      POSTGRES_PASSWORD: securepassword  
-      POSTGRES_DB: traffic_db  
-    volumes:  
-      - postgres_data:/var/lib/postgresql/data  
-
-  redis:  
-    image: redis:6  
-    ports:  
-      - "6379:6379"  
-
-volumes:  
-  postgres_data:  
+  nginx:
+    image: nginx:1.25.3-alpine
+    volumes:
+      - ./deployment/nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"

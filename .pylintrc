@@ -1,0 +1,13 @@
+[MASTER]
+ignore=venv  # Ignore virtual env
+disable=
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring
+
+good-names=X,y,X_train,X_test,y_train,y_test  # Allow ML conventions
+
+[MESSAGES CONTROL]
+disable=invalid-name,unused-variable  # Disable these checks
+
+disable=W0621,C0303,C0304
